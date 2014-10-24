@@ -8,5 +8,11 @@
             "PSCWS4\\": ["src/"],
             "XDB_R\\": ["src/"]
         }
-    }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "v1.2"
+        }
+    },
+    "minimum-stability": "dev"
 }
