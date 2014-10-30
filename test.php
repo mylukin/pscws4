@@ -35,7 +35,7 @@ $cws = new SCWS\PSCWS4('utf8');
 $cws->set_dict('dict/dict.utf8.xdb');
 $cws->set_rule('etc/rules.ini');
 //$cws->set_multi(3);
-//$cws->set_ignore(true);
+$cws->set_ignore(true);
 //$cws->set_debug(true);
 //$cws->set_duality(true);
 $cws->send_text($text);

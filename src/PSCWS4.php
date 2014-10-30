@@ -39,6 +39,7 @@
    
 \* ----------------------------------------------------------------------- */
 namespace SCWS;
+
 /** defines for ruleset */
 define ('PSCWS4_RULE_MAX', 31);    // just 31, PHP do not support unsigined Int
 define ('PSCWS4_RULE_SPECIAL', 0x80000000);
@@ -49,10 +50,12 @@ define ('PSCWS4_ZRULE_SUFFIX', 0x02);
 define ('PSCWS4_ZRULE_INCLUDE', 0x04);    // with include
 define ('PSCWS4_ZRULE_EXCLUDE', 0x08);    // with exclude
 define ('PSCWS4_ZRULE_RANGE', 0x10);    // with znum range
+
 /** defines for mode of scws <= 0x800 */
 define ('PSCWS4_IGN_SYMBOL', 0x01);
 define ('PSCWS4_DEBUG', 0x02);
 define ('PSCWS4_DUALITY', 0x04);
+
 /** multi segment policy >= 0x1000 */
 define ('PSCWS4_MULTI_NONE', 0x0000);        // nothing
 define ('PSCWS4_MULTI_SHORT', 0x1000);        // split long words to short words from left to right
@@ -61,12 +64,14 @@ define ('PSCWS4_MULTI_ZMAIN', 0x4000);        // split to main single chinese ch
 define ('PSCWS4_MULTI_ZALL', 0x8000);        // attr = ** , all split to single chars
 define ('PSCWS4_MULTI_MASK', 0xf000);        // mask check for multi set
 define ('PSCWS4_ZIS_USED', 0x8000000);
+
 /** single bytes segment flag (纯单字节字符) */
 define ('PSCWS4_PFLAG_WITH_MB', 0x01);
 define ('PSCWS4_PFLAG_ALNUM', 0x02);
 define ('PSCWS4_PFLAG_VALID', 0x04);
 define ('PSCWS4_PFLAG_DIGIT', 0x08);
 define ('PSCWS4_PFLAG_ADDSYM', 0x10);
+
 /** constant var define */
 define ('PSCWS4_WORD_FULL', 0x01);    // 多字: 整词
 define ('PSCWS4_WORD_PART', 0x02);    // 多字: 前词段
@@ -84,6 +89,9 @@ define ('PSCWS4_MAX_ZLEN', 128);
 
 /** 主类库代码 */
 class PSCWS4 {
+    /**
+     * @var XDB_R
+     */
     var $_xd;        // xdb dict handler
     var $_rs;        // ruleset resource
     var $_rd;        // ruleset data
