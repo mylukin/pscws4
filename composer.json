@@ -5,7 +5,7 @@
     "license": "BSD",
     "autoload": {
         "psr-4": {
-            "PSCWS4\\": ["src/"]
+            "SCWS\\": ["src/"]
         }
     }
 }
