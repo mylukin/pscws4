@@ -5,8 +5,7 @@
     "license": "BSD",
     "autoload": {
         "psr-4": {
-            "PSCWS4\\": ["src/"],
-            "XDB_R\\": ["src/"]
+            "PSCWS4\\": ["src/"]
         }
     }
 }
