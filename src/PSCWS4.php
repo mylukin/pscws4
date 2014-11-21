@@ -294,8 +294,8 @@ class PSCWS4 {
                 if ($tmp['idf'] < 0.2 || substr($tmp['attr'], 0, 1) == '#') continue;
                 // check attr filter
                 if (count($attrs) > 0) {
-                    if ($xmode == true && !isset($attrs[$tmp['attr']])) continue;
-                    if ($xmode == false && isset($attrs[$tmp['attr']])) continue;
+                    if ($xmode == true && isset($attrs[$tmp['attr']])) continue;
+                    if ($xmode == false && !isset($attrs[$tmp['attr']])) continue;
                 }
                 // check stopwords
                 $word = strtolower($tmp['word']);
