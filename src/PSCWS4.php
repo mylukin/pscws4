@@ -285,12 +285,14 @@ class PSCWS4 {
                 if (!empty($tmp)) $attrs[$tmp] = true;
             }
         }
+
         // save the old offset
         $off = $this->_off;
         $this->_off = $cnt = 0;
         $list = array();
         while ($tmpa = $this->get_result()) {
             foreach ($tmpa as $tmp) {
+                $tmp['attr'] = trim($tmp['attr']);
                 if ($tmp['idf'] < 0.2 || substr($tmp['attr'], 0, 1) == '#') continue;
                 // check attr filter
                 if (count($attrs) > 0) {
