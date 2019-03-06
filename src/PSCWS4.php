@@ -314,7 +314,12 @@ class PSCWS4 {
         // restore the offset
         $this->_off = $off;
         // sort it & return
-        $cmp_func = create_function('$a,$b', 'return ($b[\'weight\'] > $a[\'weight\'] ? 1 : -1);');
+        if ( (float)substr(PHP_VERSION, 0, 3) >= 5.3 ) {
+            $cmp_func = function($a, $b) {return ($b['weight'] > $a['weight'] ? 1 : -1);};
+        } else {
+            $cmp_func = create_function('$a,$b', 'return ($b[\'weight\'] > $a[\'weight\'] ? 1 : -1);');
+        }
+
         usort($list, $cmp_func);
         if (count($list) > $limit) $list = array_slice($list, 0, $limit);
         return $list;
